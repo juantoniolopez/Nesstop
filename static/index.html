@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valoracion empresas</title>
+</head>
+<body>
+   <header>
+       <h1>Lista de usuarios</h1>
+   </header>
+
+   <form>
+       <fieldset>
+           <label for="name">Nombre</label>
+           <input type="text" name="name" id="name" required/>
+           <label for="surname_1">Apellido 1</label>
+           <input type="text" name="surname_1" id="surname_1"/>
+           <label for="surname_2">Apellido 2</label>
+           <input type="text" name="surname_2" id="surname_2"/>
+           <label for="bio">Bio</label>
+           <input type="textarea" name="bio" id="bio"/>
+           <label for="city">Ciudad</label>
+           <input type="text" name="city" id="city"/>
+           <label for="email">Email</label>
+           <input type="text" name="email" id="email"/>
+           <label for="username">User Name</label>
+           <input type="text" name="username" id="username"/>
+           <label for="password">Password</label>
+           <input type="text" name="password" id="password"/>
+       </fieldset>
+
+       <button>Enviar</button>
+   </form>
+   <ul>
+
+   </ul>
+
+   <script>
+
+       const form = document.querySelector('form');
+
+       form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const name = e.target.elements.name.value;
+        const surname_1 = e.target.elements.surname_1.value; 
+        const surname_2 = e.target.elements.surname_2.value;
+        const bio = e.target.elements.bio.value;
+        const city = e.target.elements.city.value;
+        const email = e.target.elements.email.value;
+        const username = e.target.elements.username.value;
+        const password = e.target.elements.password.value;
+
+        const body = {
+            name, 
+            surname_1, 
+            surname_2, 
+            bio, 
+            city, 
+            email, 
+            username, 
+            password
+
+        };
+
+        const response = await fetch('/user',{
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(body)
+        })
+
+        if(response.ok) {
+            location.reload();
+        }
+       });
+
+       async function main() {
+        const response = await fetch('/user');
+        const json = await response.json();
+
+        const ul = document.querySelector('ul');
+
+        for (const item of json.data) {
+            const li = document.createElement('li');
+            li.innerHTML = `
+                <h2>${item.name}</h2>
+                <p>${item.surname_1}</p>
+                <p>${item.surname_2}</p>
+                <p>${item.bio}</p>
+                <p>${item.city}</p>
+                <p>${item.email}</p>
+                <p>${item.username}</p>
+                <p>${item.password}</p>
+            `;
+            ul.appendChild(li);
+        }
+       }
+
+       main();
+   </script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+const getDB = require("../db");
+
+const  = async (req, res, next) => {
+    let connection;
+
+    try {
+        connection = await getDB();
+
+        res.send({
+            message: ''
+        })
+    } catch(error) {
+        next(error);
+    } finally {
+        if(connection) connection.release();
+    }
+}
+
+module.exports = ;

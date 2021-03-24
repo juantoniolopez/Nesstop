@@ -1,0 +1,884 @@
+{
+	"info": {
+		"_postman_id": "56450439-4ef6-4403-b794-c92ccaa44e72",
+		"name": "API valoremp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Usuario",
+			"item": [
+				{
+					"name": "Listar usuarios",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjEzMzEyMTI0LCJleHAiOjE2MTU5MDQxMjR9.cZNeY9qtaadBlxbs6_vCEgKyXB71SrNTtVv6-LAkG5s",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTcsInJvbGUiOiJub3JtYWwiLCJpYXQiOjE2MTMzMTIyNTcsImV4cCI6MTYxNTkwNDI1N30.8pJkneCVLAPiJpXZ8RC0YOCXtQoMpAxCJ5YApWBbyB8",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								""
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "Oliver",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar usuarios",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/user?search=Iglesias&order=id&direction=DESC",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "Iglesias"
+								},
+								{
+									"key": "order",
+									"value": "id"
+								},
+								{
+									"key": "direction",
+									"value": "DESC"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Muestra un usuario",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIsInJvbGUiOiJub3JtYWwiLCJpYXQiOjE2MTMxMzgzNjIsImV4cCI6MTYxNTczMDM2Mn0.bXuijHvOzWpg1xi5BRvQonqQIGJCpI4aJvH9JqHlMH0",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTEsImlhdCI6MTYxMzEyNDQzNywiZXhwIjoxNjE1NzE2NDM3fQ.NdlP5M7XSVbjoaHtsk1VLYGsVWKAUiEUIZXLDqVeyH4",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjEzMDQzMTY4LCJleHAiOjE2MTU2MzUxNjh9.B9gkIT842TitBlixuuCZ7-NloTgsOIHvT-hVYfNgpJo",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/user/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Nuevo usuario",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Luis\",\n    \"surname\": \"Lopez\",\n    \"dni\": \"17548213Ñ\",\n    \"email\": \"alien.in.pyjama@gmail.com\",\n    \"password\": \"pablitoclavounclavito\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar usuario",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjEzMDQzMTY4LCJleHAiOjE2MTU2MzUxNjh9.B9gkIT842TitBlixuuCZ7-NloTgsOIHvT-hVYfNgpJo",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTEsImlhdCI6MTYxMzEyNDQzNywiZXhwIjoxNjE1NzE2NDM3fQ.NdlP5M7XSVbjoaHtsk1VLYGsVWKAUiEUIZXLDqVeyH4",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Andres",
+									"type": "text"
+								},
+								{
+									"key": "surname_1",
+									"value": "Perez",
+									"type": "text"
+								},
+								{
+									"key": "dni",
+									"value": "24598765Ñ",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "alien.in.pyjama@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "avatar",
+									"type": "file",
+									"src": "/home/zisko/Downloads/MAD-poking-nose.jpg"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/12",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"12"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Borrar usuario",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjEzMDQzMTY4LCJleHAiOjE2MTU2MzUxNjh9.B9gkIT842TitBlixuuCZ7-NloTgsOIHvT-hVYfNgpJo",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/user/16",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"16"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Votar una empresa",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTcsInJvbGUiOiJub3JtYWwiLCJpYXQiOjE2MTMzMTE0MjcsImV4cCI6MTYxNTkwMzQyN30.9T0N1nmYcYhzX7zNuOS8xlQGTXB_vnebtj58E5NykN4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"work_position\": \"Director\",\n    \"starting_date\": \"2000-09-01\",\n    \"end_date\": \"\",\n    \"aspect1_points\":1,\n    \"aspect2_points\": 3,\n    \"aspect3_points\": 3,\n    \"aspect4_points\": 5,\n    \"aspect5_points\": 3\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/17/votes/12",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"17",
+								"votes",
+								"12"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Nuevo Usuario Empresa",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"work_position\": \"Director\",\n    \"starting_date\": \"1990-09-01\",\n    \"end_date\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/17/related/12",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"17",
+								"related",
+								"12"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Validar usuario",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/user/validate/cb7beeb9c4b79ed788987988fe1e5cf3af0c44775448be8ab008585e298e61d4bc77c9f923370ebf",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"validate",
+								"cb7beeb9c4b79ed788987988fe1e5cf3af0c44775448be8ab008585e298e61d4bc77c9f923370ebf"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login usuario",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"alien.in.pyjama@gmail.com\",\n    \"password\": \"pablitoclavounclavito\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar votación",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjEzMDQzMTY4LCJleHAiOjE2MTU2MzUxNjh9.B9gkIT842TitBlixuuCZ7-NloTgsOIHvT-hVYfNgpJo",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"aspect1_points\": 6,\n    \"aspect2_points\": 6,\n    \"aspect3_points\": 6,\n    \"aspect4_points\": 6,\n    \"aspect5_points\": 6\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/14/votes/12",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"14",
+								"votes",
+								"12"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Usuario edita password",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTMsInJvbGUiOiJub3JtYWwiLCJpYXQiOjE2MTMxNDUzNTMsImV4cCI6MTYxNTczNzM1M30.zmYiAGQZB7aM0QZbfaqfQildplScdIJGSb0Gu8TeFcs",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"oldPassword\": \"pablitoclavounclavito\",\n    \"newPassword\": \"123456789\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/13/password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"13",
+								"password"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Empresa",
+			"item": [
+				{
+					"name": "Listar empresas",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTcsInJvbGUiOiJub3JtYWwiLCJpYXQiOjE2MTMzMTIyNTcsImV4cCI6MTYxNTkwNDI1N30.8pJkneCVLAPiJpXZ8RC0YOCXtQoMpAxCJ5YApWBbyB8",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/company/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"company",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar empresas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/company/?search=Parisian",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"company",
+								""
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "Parisian"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Muestra una empresa",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTEsImlhdCI6MTYxMzEyNDQzNywiZXhwIjoxNjE1NzE2NDM3fQ.NdlP5M7XSVbjoaHtsk1VLYGsVWKAUiEUIZXLDqVeyH4",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjEzMDQzMTY4LCJleHAiOjE2MTU2MzUxNjh9.B9gkIT842TitBlixuuCZ7-NloTgsOIHvT-hVYfNgpJo",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/company/11",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"company",
+								"11"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Añadir foto empresa",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTEsImlhdCI6MTYxMzEyNDQzNywiZXhwIjoxNjE1NzE2NDM3fQ.NdlP5M7XSVbjoaHtsk1VLYGsVWKAUiEUIZXLDqVeyH4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "photo1",
+									"type": "file",
+									"src": "/home/zisko/Downloads/starwars.jpeg"
+								},
+								{
+									"key": "photo2",
+									"type": "file",
+									"src": "/home/zisko/Downloads/mad_black_white.jpeg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/company/11/photos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"company",
+								"11",
+								"photos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Borrar foto empresa",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTEsImlhdCI6MTYxMzEyNDQzNywiZXhwIjoxNjE1NzE2NDM3fQ.NdlP5M7XSVbjoaHtsk1VLYGsVWKAUiEUIZXLDqVeyH4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/company/11/photos/13",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"company",
+								"11",
+								"photos",
+								"13"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar datos empresa",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjEzMTQzNDUzLCJleHAiOjE2MTU3MzU0NTN9.t_Xh2yOhRTZY9-sh2ynXzXSbUnc1HuiFtsWqG2ylIdA",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTEsImlhdCI6MTYxMzE0MzU5MSwiZXhwIjoxNjE1NzM1NTkxfQ.vt5iTELTh6zWdQ9oyCRLjqqxbNv0I8Zzlryrp6_z_Os",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Paquito.INC",
+									"type": "text"
+								},
+								{
+									"key": "city",
+									"value": "A Coruña",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "logo",
+									"type": "file",
+									"src": "/home/zisko/Downloads/mandalorian.jpeg"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/company/11",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"company",
+								"11"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Empresa crea aspectos de valoración",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"aspect1\": \"Ambiente de trabajo\",\n    \"aspect2\": \"Jefes\",\n    \"aspect3\":\"Horarios\",\n    \"aspect4\": \"\",\n    \"aspect5\": \"\"\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/company/4/aspects",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"company",
+								"4",
+								"aspects"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modificar aspectos de valoración",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"aspect1\": \"a ver si va\",\n    \"aspect2\": \"\",\n    \"aspect3\": \"\",\n    \"aspect4\": \"\",\n    \"aspect5\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/company/3/edit_aspects",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"company",
+								"3",
+								"edit_aspects"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Borrar empresa",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTEsImlhdCI6MTYxMzEyNDQzNywiZXhwIjoxNjE1NzE2NDM3fQ.NdlP5M7XSVbjoaHtsk1VLYGsVWKAUiEUIZXLDqVeyH4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/company/11",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"company",
+								"11"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Nueva empresa",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Paquito.INC\",\n    \"email\": \"alien.in.pyjama@gmail.com\",\n    \"password\": \"pepito\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/company",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"company"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Validar empresa",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/company/validate/d45a1eb0756f04f85d75f5112c493391edf037e0c20ada104525c9897b07a9c27bd7b91359522251",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"company",
+								"validate",
+								"d45a1eb0756f04f85d75f5112c493391edf037e0c20ada104525c9897b07a9c27bd7b91359522251"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login empresa",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"amonkeystolemycookies@gmail.com\",\n    \"password\": \"pepito\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/company/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"company",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Empresa valida usuario",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/validateUserCompany/49aaa960b860e7e18f0f04e983dadfac8c98f95de344e8a7efba71a5be92acee6dc332786b57fb17",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"validateUserCompany",
+								"49aaa960b860e7e18f0f04e983dadfac8c98f95de344e8a7efba71a5be92acee6dc332786b57fb17"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
